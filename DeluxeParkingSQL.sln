@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeluxeParkingSQL", "DeluxeParkingSQL\DeluxeParkingSQL.csproj", "{F920C7E5-617D-4406-A160-16C987217C01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F920C7E5-617D-4406-A160-16C987217C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F920C7E5-617D-4406-A160-16C987217C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F920C7E5-617D-4406-A160-16C987217C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F920C7E5-617D-4406-A160-16C987217C01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D65EF7A7-F1F7-43AA-88E9-22FE13B5453F}
+	EndGlobalSection
+EndGlobal
