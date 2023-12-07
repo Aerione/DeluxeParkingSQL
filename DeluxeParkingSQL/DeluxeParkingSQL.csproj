@@ -49,6 +49,8 @@
     <Compile Include="DatabaseDapper.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\City.cs" />
+    <Compile Include="Models\ElectricOutletSlotsCity.cs" />
+    <Compile Include="Models\ElectricOutletsSlots.cs" />
     <Compile Include="Models\ParkingHouse.cs" />
     <Compile Include="Models\ParkingSlots.cs" />
     <Compile Include="Models\VacantSpots.cs" />

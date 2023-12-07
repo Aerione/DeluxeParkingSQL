@@ -123,17 +123,41 @@ namespace DeluxeParkingSQL
             return affectedRows;
         }
 
-        //public static int ParkCar(int carId, int? spotId)
-        //{
-        //    int affectedRows = 0;
+        public static int ParkCar(int carId, int? spotId)
+        {
+            int affectedRows = 0;
 
-        //    string sql = $"UPDATE Cars SET ParkingSlotsId=" + (spotId == null ? "NULL" : spotId) + $" WHERE Id = {carId}";
-        //    using (var connection = new SqlConnection(connString))
-        //    {
-        //        affectedRows = connection.Execute(sql);
-        //    }
-        //    return affectedRows;
-        //}
+            string sql = $"UPDATE Cars SET ParkingSlotsId={(spotId?.ToString() ?? "NULL")} WHERE Id = {carId}";
+            using (var connection = new SqlConnection(connString))
+            {
+                affectedRows = connection.Execute(sql);
+            }
+            return affectedRows;
+        }
+
+        public static List<ElectricOutletsSlots> GetAllElectricOutletSlots()
+        {
+            string sql = "SELECT ph.HouseName,COUNT(ps.ElectricOutlet) AS ElectricOutletsAmount FROM ParkingSlots ps JOIN ParkingHouses ph ON ps.ParkingHouseID = ph.Id WHERE ps.ElectricOutlet = 1  GROUP BY ph.HouseName";
+            List<ElectricOutletsSlots> eSlots = new List<ElectricOutletsSlots>();
+
+            using (var connection = new SqlConnection(connString))
+            {
+                eSlots = connection.Query<Models.ElectricOutletsSlots>(sql).ToList();
+            }
+            return eSlots;
+        }
+
+        public static List<ElectricOutletSlotsCity> GetAllElectricOutletSlotsCity()
+        {
+            string sql = "SELECT c.CityName,COUNT(ps.ElectricOutlet) AS ElectricOutlets FROM ParkingSlots ps JOIN ParkingHouses ph ON ps.ParkingHouseID = ph.Id JOIN Cities c ON ph.CityId = c.Id WHERE ps.ElectricOutlet = 1  GROUP BY c.CityName";
+            List<ElectricOutletSlotsCity> eSlots = new List<ElectricOutletSlotsCity>();
+
+            using (var connection = new SqlConnection(connString))
+            {
+                eSlots = connection.Query<Models.ElectricOutletSlotsCity>(sql).ToList();
+            }
+            return eSlots;
+        }
 
     }
 }
